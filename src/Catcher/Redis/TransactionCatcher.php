@@ -90,12 +90,12 @@ class TransactionCatcher
 
     public function try(bool $throw = false): bool
     {
-        defer(function() {
-            if (! hasRpcTransError() )
-            {
-                $this->pass();
-            }
-        });
+        //defer(function() {
+        //    if (! hasRpcTransError() )
+        //    {
+        //        $this->pass();
+        //    }
+        //});
         
         $status = $this->redisCheckStatus->eval([$this->hash]);
 
